@@ -19,7 +19,7 @@ export class TemperatureDataComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.data) {
-      this.viewData = this.data.data.map(x => Math.round(x.temp));
+      this.viewData = this.data.data.slice(0, 7).map(x => Math.round(x.temp));
       console.log(this.viewData);
     }
   }
