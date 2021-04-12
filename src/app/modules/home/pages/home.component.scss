@@ -1,0 +1,20 @@
+.home-wrapper {
+  min-height: 100vh;
+  height: 100%;
+
+  app-location-input-component {
+    max-width: 632px;
+    width: 100%;
+  }
+
+  app-temperature-data-component {
+    max-width: 642px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home-wrapper {
+    padding: 16px;
+  }
+}

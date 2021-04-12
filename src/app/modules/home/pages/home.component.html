@@ -1,0 +1,5 @@
+<div class="home-wrapper d-flex flex-column align-items-center justify-content-center"
+[ngStyle]="{'background' : gradient}">
+  <app-location-input-component (emitCity)="reciveCity($event)"></app-location-input-component>
+  <app-temperature-data-component [data]="weatherData" [averageTemp]="averageTemp"></app-temperature-data-component>
+</div>

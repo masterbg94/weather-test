@@ -1,0 +1,63 @@
+.temperature-data {
+  width: 100%;
+  margin-top: 48px;
+
+  .week-date {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.06em;
+    color: #08153E;
+    opacity: 0.6;
+    text-transform: uppercase;
+  }
+
+  .average-ten-days {
+    font-size: 120px;
+    line-height: 120px;
+    font-weight: 600;
+    color: white;
+    margin-top: 27px;
+    margin-bottom: 48px;
+
+    sup {
+      font-size: 24px;
+      line-height: 32px;
+      vertical-align: top;
+      top: 24px;
+    }
+  }
+
+  .temperature-by-day {
+    flex: 1;
+
+    .day {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 24px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.06em;
+      color: rgba(8, 21, 62, 0.6);
+      text-transform: uppercase;
+    }
+
+    .day-temperature {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 400;
+      color: white;
+
+      sup {
+        font-size: 12px;
+        vertical-align: top;
+        top: 12px;
+      }
+    }
+  }
+}

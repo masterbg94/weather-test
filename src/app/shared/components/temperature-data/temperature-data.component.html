@@ -1,0 +1,14 @@
+<div class="temperature-data d-flex flex-column align-items-center" *ngIf="data">
+  <p class="week-date m-0">{{firstday | date: 'MMMM dd' }} - {{lastday | date: 'dd yyyy'}} </p>
+  <p class="average-ten-days">{{averageTemp}} <sup>°C</sup></p>
+
+  <div class="d-flex flex-wrap w-100">
+    <div class="temperature-by-day d-flex flex-column align-items-center mx-2"
+         *ngFor="let temp of viewData;let i = index">
+      <p class="day m-0">{{returnDayName(i)| date: 'EEEE'}}</p>
+      <p class="day-temperature m-0">{{temp}}<sup>°C</sup></p>
+    </div>
+  </div>
+
+</div>
+

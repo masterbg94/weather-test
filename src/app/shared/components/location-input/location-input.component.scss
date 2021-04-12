@@ -1,0 +1,139 @@
+.input-wrapper {
+  width: 100%;
+  border-radius: 16px;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.9)
+  ),
+  #f8f8f8;
+  box-shadow: 0 2px 10px rgba(8, 21, 62, 0.15);
+
+
+  .city-autocomplete, .icon-countries .input-country {
+    height: 48px;
+  }
+
+  .icon-countries {
+    .input-country {
+      margin-left: 15px;
+      margin-right: 8px;
+
+      button#dropdownBasic1 {
+        width: 95px;
+        height: 100%;
+        font-size: 14px;
+        background: #ffffff;
+        border: 1px solid rgba(8, 21, 62, 0.05);
+        border-radius: 6px;
+        color: #08153e;
+        box-shadow: none;
+
+        img {
+          max-width: 18px;
+          height: 14px;
+        }
+
+        &:focus,
+        &:hover:focus {
+          border: 2px solid #b5c7ff;
+        }
+
+        &:hover {
+          border: 1px solid #b5c7ff;
+        }
+      }
+
+      .dropdown-countries {
+        max-height: 260px;
+        max-width: 260px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        .dropdown-item {
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        button img {
+          max-width: 30px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  .city-autocomplete {
+    flex: 1;
+    min-width: 250px;
+
+    ::ng-deep {
+      ng-autocomplete.ng-autocomplete {
+        width: 100% !important;
+
+        .autocomplete-container {
+          box-shadow: none;
+          height: 100%;
+
+          .input-container {
+            height: 100%;
+
+            input {
+              height: 100%;
+              border-radius: 6px;
+              border: 1px solid rgba(8, 21, 62, 0.05);
+              color: rgba(8, 21, 62, 1);
+
+              &::placeholder {
+                color: rgba(8, 21, 62, 0.5);
+              }
+
+              &:focus,
+              &:hover:focus {
+                border: 2px solid #b5c7ff;
+              }
+
+              &:hover {
+                border: 1px solid #b5c7ff;
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .input-wrapper {
+    padding: 22px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .input-wrapper {
+    padding: 12px;
+  }
+}
+
+@media screen and (max-width: 471px) {
+  .input-wrapper {
+    flex-direction: column;
+
+    .icon-countries {
+      margin: auto auto 12px;
+      flex-direction: column;
+
+      .input-country {
+        .dropdown-countries {
+          left: calc(50% - 130px) !important;
+        }
+      }
+    }
+
+    .city-autocomplete {
+      width: 100%;
+    }
+  }
+}
