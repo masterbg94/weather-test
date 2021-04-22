@@ -1,20 +1,33 @@
 <div class="input-wrapper d-flex flex-wrap align-items-center">
   <div class="icon-countries d-flex">
-    <img src="../../../../assets/images/home/cloud.svg" alt="location-icon-cloud">
-    <div ngbDropdown class="d-inline-block input-country">
-      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
-        <img *ngIf="selectedCountry"
-             alt="selected-country-image"
-             src="{{'https://www.countryflags.io/'+ selectedCountry.country_code +'/flat/64.png'}}">
-        {{ selectedCountry ? selectedCountry.country_code : 'Country' }}
-      </button>
-      <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-countries">
-        <button *ngFor="let country of allCountries" ngbDropdownItem (click)="selectCountry(country)">
-          <img alt="dropdown-countries" src="{{'https://www.countryflags.io/'+ country.country_code +'/flat/64.png'}}">
-          {{country.country_name}}</button>
-      </div>
+    <img src="../../../../assets/images/home/cloud.svg" class="weather-icon" alt="location-icon-cloud">
+    <div class="country-autocomplete-wrapper">
+      <ng-autocomplete
+        #autocomplete
+        class="autocomplete-country"
+        id="autocomplete1"
+        placeholder="Country"
+        historyIdentifier=""
+        [data]="allCountries"
+        [searchKeyword]="countryKeyword"
+        [itemTemplate]="itemTemplateCountry"
+        [notFoundTemplate]="notFoundTemplateCountry"
+        (selected)="selectCountry($event)"
+        (inputCleared)="clearedCountry()"
+      >
+      </ng-autocomplete>
+      <ng-template #itemTemplateCountry let-item>
+        <div class="item">
+          <img alt="dropdown-countries" src="{{'../../../../assets/images/countries/' + item.icon + '.png'}}">
+          <span [innerHTML]="item.country_name"></span>
+        </div>
+      </ng-template>
+      <ng-template #notFoundTemplateCountry let-notFound>
+        <div [innerHTML]="notFound"></div>
+      </ng-template>
     </div>
   </div>
+
   <div class="city-autocomplete d-flex">
     <ng-autocomplete
       [disabled]="!selectedCities"
