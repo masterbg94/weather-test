@@ -8,13 +8,9 @@ import {WeatherModel} from '../../models/weather.model';
 })
 export class TemperatureDataComponent implements OnChanges {
   currentDate = new Date();
-  first = this.currentDate.getDate() - this.currentDate.getDay();
-  last = this.first + 7;
-  firstday = new Date();
-  lastday = new Date(this.currentDate.setDate(this.last)).toUTCString();
+  endDate = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 7);
   @Input() data: WeatherModel = null;
   @Input() averageTemp;
-
   viewData = null;
 
   ngOnChanges(changes: SimpleChanges): void {

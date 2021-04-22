@@ -1,5 +1,5 @@
 <div class="temperature-data d-flex flex-column align-items-center" *ngIf="data">
-  <p class="week-date m-0">{{firstday | date: 'MMMM dd' }} - {{lastday | date: 'dd yyyy'}} </p>
+  <p class="week-date m-0">{{currentDate | date: 'MMMM dd' }} - {{endDate | date: 'dd yyyy'}} </p>
   <p class="average-ten-days">{{averageTemp}} <sup>°C</sup></p>
 
   <div class="d-flex flex-wrap w-100">
