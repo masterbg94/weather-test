@@ -53,6 +53,12 @@
 
         .suggestions-container.is-visible {
           width: 200px;
+          ul li.item .item span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-left: 12px;
+          }
         }
       }
     }
@@ -105,13 +111,6 @@
 
           img {
             width: 30px;
-          }
-
-          span {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            margin-left: 12px;
           }
         }
       }
